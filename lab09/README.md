@@ -108,7 +108,7 @@ hello   ,   world ,   and ,   goodbye
 
 Ответ:  
 ```
-print(*map(len, map(str.strip, input().split(', '))), sep=',')
+print(*map(len, map(str.strip, input().split(','))), sep=',')
 ```
 
 ### Задание 6 **(2)**
@@ -219,7 +219,7 @@ print(nums)
 Ответ:  
 ```
 n = 5
-tblmul = [[i * j for j in range (n)] for i in range (n)]
+tblmul = [[i * j for j in range (1, n + 1)] for i in range (1, n + 1)]
 print(*tblmul, sep='\n')
 ```
 
