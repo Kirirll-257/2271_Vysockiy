@@ -115,7 +115,20 @@ if (p < q)
 else
     std::cout << "No";
 ```
-
+Ответ:  
+В программе сравниваются адреса переменных в памяти  
+```
+#include <iostream>
+int main(){
+int y = 1, x = 2;
+int *p = &y, *q = &x;
+if (p < q)
+    std::cout << "Yes";
+else
+    std::cout << "No";
+return 0;
+}
+```
 
 ### Задание 6 **(2)**
 
@@ -127,6 +140,37 @@ double x = 0;
 double *d = &x;
 std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
 ```
+Ответ:  
+```
+#include <iostream>
+int main() {
+{
+double x = 0;
+double *d = &x;
+std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+}
+{
+int x = 0;
+int *d = &x;
+std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+}
+{
+char x = 0;
+char *d = &x;
+std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+}
+}
+```
+![](images/06.png)
 
 ### Задание 7 **(2)**
 
